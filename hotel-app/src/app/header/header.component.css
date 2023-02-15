@@ -1,0 +1,37 @@
+header{
+    background-color: rgba(108, 168, 218, 0.886);
+    padding:0;
+    /*border-bottom: 1px solid #2017becd;*/
+}
+
+a{
+    color:#ffffff;
+    font-size: 20px;
+}
+
+a:hover{
+    background: #8bcbe6;
+}
+
+.container{
+    margin: 0 auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+a.logo{
+    font-weight: bold;
+    padding: 1em;
+}
+
+nav ul{
+    list-style-type: none;
+    margin:0;
+}
+
+nav ul li a{
+    padding: 1em;
+    display: inline-block;
+}

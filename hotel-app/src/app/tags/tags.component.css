@@ -1,0 +1,19 @@
+div {
+    display: flex;
+    flex-wrap:wrap;
+
+}
+
+div a {
+    background-color: #f0f0f0;
+    padding: .3rem 1rem;
+    margin: .2rem .15rem;
+    border-radius: 10rem;
+    font-weight: 300;
+    color: blue;
+    font-size: 0.8em;
+}
+
+div a:hover{
+    opacity:70%;
+}

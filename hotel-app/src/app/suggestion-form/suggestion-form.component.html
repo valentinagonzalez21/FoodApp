@@ -1,0 +1,30 @@
+<header>Déjanos una sugerencia</header>
+<p>Nuestros clientes son nuestra prioridad. Cuéntanos que buscas!</p>
+<div class="container">
+    <form #suggestionForm="ngForm" name="myForm" (ngSubmit)="onSubmit(suggestionForm)" validate>
+      
+      <!--  {{suggestionForm.value | json}}
+        <hr />
+        {{ suggestion | json }}
+        <hr />
+
+        - si usas [ngModel] = suggestion.name podes poner en el formulario datos
+            pero el flow solo va de la class a la view
+        
+        - con [(ngModel)] hace two-way data binding -->
+
+        <label>Nombre</label><br><br>
+        <input required type="text" id="nombre" name="nombre" #name="ngModel" [class.error]="name.invalid && name.touched" class="form-control" [(ngModel)]="nameVar"><br><br>
+        <label *ngIf="name.invalid && name.touched" class="error-label">Este campo es obligatorio</label>
+        <label>Email</label><br><br>
+        <input required type="email" id="email" name="email" #email="ngModel" [class.error]="!checkMail(emailVar) && email.touched" class="form-control" [(ngModel)]="emailVar"><br><br>
+        <label *ngIf="!checkMail(emailVar) && email.touched" class="error-label">El mail ingresado no es válido</label>
+        <label>Producto natural que buscas</label><br><br>
+        <input required type="text" id="sugerencia" name="sugerencia" placeholder="ej. uva" 
+        #suggestion="ngModel" [class.error]="suggestion.invalid && suggestion.touched" 
+        class="form-control" [(ngModel)]="suggestionVar"><br><br>
+        <label *ngIf="suggestion.invalid && suggestion.touched" class="error-label">Este campo es obligatorio</label>
+        <input class="submit-button" [disabled]="suggestionForm.invalid || !checkMail(emailVar)" type="submit" value="Enviar">
+    </form>
+</div>
+

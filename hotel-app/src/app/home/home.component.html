@@ -1,0 +1,46 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<app-not-found [visible]="!foods || foods.length <= 0" resetLinkText = "Reiniciar búsqueda"></app-not-found>
+<ul>
+    <li *ngFor="let food of foods">
+        <a routerLink="/food/{{food.id}}">
+            <img src="{{ food.imageUrl }}" alt="">
+            <div class="content">
+                <div class="name">
+                    {{ food.name }}
+                </div>
+                <span *ngIf="food.favorite" class="favorite" >
+                    ♥ 
+                </span>
+               <div class="product-item-footer">
+                    <div class="origins">
+                        <span>
+                            {{ food.origins }}
+                        </span>
+                    </div>
+                    <div class="rating">
+                        <span>
+                            {{ food.stars }} ☆
+                        </span>
+                    </div>
+               </div>
+               <div class="price">
+                    <span>
+                        {{ food.price|currency }}
+                    </span>
+               </div>
+            </div>
+        </a>
+        
+    </li>
+</ul>
+
+<div class="suggestion-container">
+    
+    <p class="suggestion-question">¿No encuentras lo que buscas?</p>
+    <button (click)="goToSuggestionForm()" class="suggestion">Déjanos una sugerencia</button>
+
+</div>
+
+
+
